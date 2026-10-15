@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plantilla de seguimiento de avance, presupuesto y actividades de una obra.">
+  <title>Obra · Panel de proyecto</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script defer src="./data/proyecto.js"></script>
+  <script defer src="./assets/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#resumen">Ir al contenido</a>
+  <aside class="sidebar">
+    <a class="brand" href="#resumen"><span class="brand-icon">▥</span> OBRA<span class="brand-dot">.</span></a>
+    <div class="sidebar-label">CONTROL DE PROYECTO</div>
+    <nav aria-label="Secciones del panel">
+      <a href="#resumen">◫ <span>Resumen general</span></a>
+      <a href="#avance">↗ <span>Avance de obra</span></a>
+      <a href="#presupuesto">▤ <span>Presupuesto</span></a>
+      <a href="#actividades">☷ <span>Actividades</span></a>
+    </nav>
+    <div class="sidebar-note"><span class="status-dot"></span> Plantilla de demostración<p>Reemplaza los datos de ejemplo con los de tu proyecto.</p></div>
+    <div class="sidebar-footer">OBRA / PROJECT MONITOR<br><span>Hecho para construir con claridad.</span></div>
+  </aside>
+  <main>
+    <header class="topbar"><span>Proyectos <span class="separator">/</span> <span id="breadcrumb">Proyecto de ejemplo</span></span><span class="demo-tag">DATOS DE EJEMPLO</span></header>
+    <section id="resumen" class="section-anchor">
+      <div class="page-heading"><div><p class="eyebrow">PANORAMA DEL PROYECTO</p><h1>Todo el proyecto.<br><span>Una sola vista.</span></h1><p class="subtitle">Avance, recursos y próximos pasos para mantener tu obra en marcha.</p></div><button id="print" class="button" type="button">↓ Imprimir informe</button></div>
+      <div class="project-banner">
+        <div><span class="project-badge">PROYECTO DE EJEMPLO</span><h2 id="project-name">—</h2><p id="project-location">—</p><div class="project-meta"><span id="project-manager"></span><span id="project-dates"></span></div></div>
+        <svg class="building" viewBox="0 0 290 150" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M25 132h240M50 132V55l70-28 105 33v72M120 27v105M50 55l70 25 105-20M50 78l70 25 105-20M50 101l70 25 105-20M73 63v69M96 71v61M145 74v58M171 68v64M198 63v69M243 132V22M230 22h26M177 22h94M243 22l-26-15h-40v15M186 22v25M181 47h10M239 22v110"/><path d="m38 140 83 7 132-10" stroke-dasharray="3 5"/></g></svg>
+      </div>
+      <div class="update-line"><span><span class="status-dot"></span> Fecha de corte: <strong id="updated">—</strong></span><span>Valores ilustrativos · Moneda: <span id="currency">—</span></span></div>
+      <div id="metrics" class="metrics" aria-label="Indicadores principales"></div>
+    </section>
+    <section id="avance" class="section-anchor two-columns">
+      <article class="panel"><div class="panel-heading"><div><p class="eyebrow">01 / SEGUIMIENTO</p><h2>Avance acumulado</h2></div><span class="small-label">% de ejecución</span></div><div class="legend"><span><i class="planned"></i>Planificado</span><span><i class="actual"></i>Ejecutado</span></div><div id="progress-chart"></div><p class="panel-footnote">Cada punto corresponde a un corte del proyecto.</p></article>
+      <article class="panel"><div class="panel-heading"><div><p class="eyebrow">02 / FRENTES DE TRABAJO</p><h2>Avance por etapa</h2></div></div><div id="stages" class="stages"></div></article>
+    </section>
+    <section id="presupuesto" class="panel section-anchor"><div class="panel-heading"><div><p class="eyebrow">03 / RECURSOS</p><h2>Control de presupuesto</h2></div><span class="small-label">Presupuesto vs. ejecutado</span></div><div class="table-wrap"><table><caption class="sr-only">Presupuesto por partida</caption><thead><tr><th scope="col">Partida</th><th scope="col" class="numeric">Presupuesto</th><th scope="col" class="numeric">Ejecutado</th><th scope="col">Consumo</th><th scope="col" class="numeric">Saldo</th></tr></thead><tbody id="budget-rows"></tbody><tfoot id="budget-total"></tfoot></table></div></section>
+    <section id="actividades" class="panel section-anchor"><div class="panel-heading activities-heading"><div><p class="eyebrow">04 / PLAN DE TRABAJO</p><h2>Actividades y cronograma</h2></div><div class="filters"><label class="sr-only" for="search">Buscar actividad o responsable</label><input id="search" type="search" placeholder="Buscar actividad…"><label class="sr-only" for="status">Filtrar por estado</label><select id="status"><option value="all">Todos los estados</option><option>Pendiente</option><option>En curso</option><option>Completada</option><option>Retrasada</option></select></div></div><div class="table-wrap"><table><caption class="sr-only">Cronograma de actividades</caption><thead><tr><th scope="col">Actividad</th><th scope="col">Responsable</th><th scope="col">Inicio</th><th scope="col">Fin</th><th scope="col">Avance</th><th scope="col">Estado</th></tr></thead><tbody id="activity-rows"></tbody></table></div><p id="activity-count" class="panel-footnote" aria-live="polite"></p></section>
+    <footer class="footer"><span>OBRA<span class="brand-dot">.</span> <span>Datos claros. Mejores decisiones.</span></span><span>Plantilla estática para GitHub Pages</span></footer>
+    <noscript><p>Activa JavaScript para mostrar los datos del proyecto.</p></noscript>
+  </main>
+</body>
+</html>
